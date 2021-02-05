@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../components/Card";
-import { Input, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Search";
 
 
 const Search = () => {
