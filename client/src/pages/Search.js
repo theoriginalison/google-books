@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import SearchForm from "../components/SearchForm";
+import Card from "../components/Card";
 
 //this is where we'll store the data that's being sent
 
@@ -9,13 +10,23 @@ const Search = () => {
 
     //this needs to be propped down to the search component too
     const findBooks = (searchTerms) => {
-        axios.get(`/api/books/${searchTerms}`)
-    }.then
+        console.log(searchTerms)
+        axios.get("/api/books/googleSearch", {
+            params: {
+                searchTerms: searchTerms
+            }
+        })
+        .then((res)=>{
+            console.log(res)
+        })
+    };
     //when you get the data back, save it in the Hooks, use state here, and save the results from your search, and then prop it down to the card (where it will be rendered)
 
     return (
         <>
-            <SearchForm />
+            <SearchForm 
+            findBooks={findBooks}
+            />
             <Card />
         </>
     )

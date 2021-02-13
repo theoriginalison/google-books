@@ -33,5 +33,9 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  searchGoogle: function (req, res) {
+    console.log(req.params)
+    res.json(req.params)
   }
 };

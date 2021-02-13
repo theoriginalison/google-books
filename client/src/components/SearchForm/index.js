@@ -12,12 +12,17 @@ function SearchForm(props) {
         <Form>
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Enter part of a title here.</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" onChange={(e) => setSearchTerms(e.value)} />
+                <Form.Control type="text" placeholder="Search here!" onChange={(e) => 
+                {console.log(e.target.value)
+                setSearchTerms(e.target.value)}}/>
                 <Form.Text className="text-muted">
                     Enter your search here.    </Form.Text>
             </Form.Group>
 
-            <Button variant="primary" type="submit" onClick={() => props.findBooks(searchTerms)} >
+            <Button variant="primary" type="submit" onClick={(e) => {
+                e.preventDefault()
+                props.findBooks(searchTerms)
+                }} >
                 Search for a Book
   </Button>
         </Form>
