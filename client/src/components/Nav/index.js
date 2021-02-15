@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Nav() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <h1>Google Book Search</h1>
+            <h1 className="siteNameNav">Google Book Search</h1>
             <Link className="navbar-brand ml-auto" to="/">
                 Search
         </Link>

@@ -41,7 +41,7 @@ const Search = () => {
             console.log(res)
         })
     };
-    //when you get the data back, save it in the Hooks, use state here, and save the results from your search, and then prop it down to the card (where it will be rendered)
+    //THIS NEEDS TO HAPPEN NEXT !! when you get the data back, save it in the Hooks, use state here, and save the results from your search, and then prop it down to the card (where it will be rendered); then after the user can see all the books, then work on the save
 
     return (
         <>

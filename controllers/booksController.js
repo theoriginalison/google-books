@@ -1,4 +1,5 @@
 const db = require("../models/book");
+const axios = require("axios");
 
 // Defining methods for the booksController
 module.exports = {
@@ -35,7 +36,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   searchGoogle: function (req, res) {
-    console.log(req.params)
-    res.json(req.params)
+    console.log(req.query)
+    console.log("the name of the book should be above this")
+    axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.query.searchTerms}+intitle:keyes&key=${process.env.APIKey}`).then(function(data){
+    console.log(data.data)
+    res.json(data.data)
+  })
   }
 };
