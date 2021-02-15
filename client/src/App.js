@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import React from "react";
 import Search from '../src/pages/Search';
 import Save from '../src/pages/Save';
 import Nav from './components/Nav';
+import './App.css';
+
 
 function App() {
   return (

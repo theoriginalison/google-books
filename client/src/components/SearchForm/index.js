@@ -11,19 +11,17 @@ function SearchForm(props) {
     return (
         <Form>
             <Form.Group controlId="formBasicEmail">
-                <Form.Label>Enter part of a title here.</Form.Label>
-                <Form.Control type="text" placeholder="Search here!" onChange={(e) => 
+                
+                <Form.Control type="text" placeholder="Search for a title here..." onChange={(e) => 
                 {console.log(e.target.value)
                 setSearchTerms(e.target.value)}}/>
-                <Form.Text className="text-muted">
-                    Enter your search here.    </Form.Text>
             </Form.Group>
 
             <Button variant="primary" type="submit" onClick={(e) => {
                 e.preventDefault()
                 props.findBooks(searchTerms)
                 }} >
-                Search for a Book
+                Search!
   </Button>
         </Form>
 

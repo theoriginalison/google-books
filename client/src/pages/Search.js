@@ -3,6 +3,27 @@ import axios from "axios";
 import SearchForm from "../components/SearchForm";
 import Card from "../components/Card";
 
+
+
+// function Books() {
+//     // Setting our component's initial state
+//     const [books, setBooks] = useState([])
+//     const [formObject, setFormObject] = useState({})
+  
+//     // Load all books and store them with setBooks
+//     useEffect(() => {
+//       loadBooks()
+//     }, [])
+  
+//     // Loads all books and sets them to books
+//     function loadBooks() {
+//       API.getBooks()
+//         .then(res => 
+//           setBooks(res.data)
+//         )
+//         .catch(err => console.log(err));
+//     };
+
 //this is where we'll store the data that's being sent
 
 const Search = () => {
