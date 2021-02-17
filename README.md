@@ -21,7 +21,7 @@ Install npm packages as usual.
 After installing npm packages, launch the app. Type part of a title in the search bar, and choose from a list of relevant results to save.
 
 ## Screeshots
-![Screenshot forthcoming]()
+![Screenshot forthcoming](./readmeImages/screenshot.png)
 
 ## License
 MIT License
