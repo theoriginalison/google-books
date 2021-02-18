@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import axios from "axios";
 import SearchForm from "../components/SearchForm";
 import Card from "../components/Card";
@@ -26,11 +26,21 @@ import Card from "../components/Card";
 
 //this is where we'll store the data that's being sent
 
-const Search = () => {
+class Search extends Component {
     //create functions here to make the API requests to MY API
-
+state = {
+    books: [ {
+imageLinks: {
+    thumbnail: ""
+}, 
+volumeInfo: {
+    title: "",
+    authors: "",
+}
+     } ]
+}
     //this needs to be propped down to the search component too
-    const findBooks = (searchTerms) => {
+    findBooks = (searchTerms) => {
         console.log(searchTerms)
         axios.get("/api/books/googleSearch", {
             params: {
@@ -38,19 +48,22 @@ const Search = () => {
             }
         })
         .then((res)=>{
-            console.log(res)
+            console.log(res.data.items[0])
+            this.setState({books: res.data.items[0]})
         })
     };
-    //THIS NEEDS TO HAPPEN NEXT !! when you get the data back, save it in the Hooks, use state here, and save the results from your search, and then prop it down to the card (where it will be rendered); then after the user can see all the books, then work on the save
-
+    
+render() {
     return (
         <>
             <SearchForm 
-            findBooks={findBooks}
+            findBooks={this.findBooks}
             />
-            <Card />
+            <Card book={this.state.books}/>
         </>
     )
+}
+    
 }
 
 export default Search;
